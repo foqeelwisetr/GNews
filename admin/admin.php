@@ -22,7 +22,7 @@ if ( ! class_exists( ' G_News_Admin' ) ) {
 		public function settings_page_html() {
 			?>
             <div class="wrap">
-                <h1>GNews API Settings</h1>
+                <h1><?php echo esc_html__( 'GNews API Settings', 'g_news' ); ?></h1>
                 <form method="post" action="options.php">
 					<?php
 					settings_fields( 'wpgnews_settings' );
@@ -30,7 +30,7 @@ if ( ! class_exists( ' G_News_Admin' ) ) {
 					?>
                     <table class="form-table">
                         <tr valign="top">
-                            <th scope="row">API Key</th>
+                            <th scope="row"><?php echo esc_html( 'API Key', 'g_news' ); ?></th>
                             <td><input type="text" name="wpgnews_api_key" value="<?php echo esc_attr( get_option( 'wpgnews_api_key' ) ); ?>" class="regular-text"/></td>
                         </tr>
                     </table>
@@ -42,7 +42,7 @@ if ( ! class_exists( ' G_News_Admin' ) ) {
                 </form>
 				<?php if ( isset( $_GET['scrape'] ) && $_GET['scrape'] === 'success' ) : ?>
                     <div class="notice notice-success is-dismissible">
-                        <p>News articles scraped and saved successfully!</p>
+                        <p><?php echo esc_html__( 'News articles scraped and saved successfully!', 'g_news' ); ?></p>
                     </div>
 				<?php endif; ?>
             </div>

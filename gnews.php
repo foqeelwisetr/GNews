@@ -67,8 +67,9 @@ if ( ! class_exists( ' G_News' ) ) {
 		}
 
 		public function plugin_settings_link( $links ) {
-			$plugin_settings_link = '<a href="edit.php?post_type=news">Settings</a>';
-			array_unshift( $links, $plugin_settings_link );
+			$plugin_settings_link = '<a href="/admin.php?page=wpgnews-settings">' . __('Settings', 'g_new') . '</a>';
+			array_unshift($links, $plugin_settings_link);
+
 
 			return $links;
 		}
